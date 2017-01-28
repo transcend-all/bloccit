@@ -8,6 +8,13 @@ require 'random_data'
   )
 end
 
+puts "#{Post.count}"
+Post.find_or_create_by(
+  title: "I want a million dollars",
+  body: "You and everybody else"
+)
+puts "#{Post.count}"
+
 posts = Post.all
 
 100.times do
@@ -16,6 +23,12 @@ posts = Post.all
     body: RandomData.random_paragraph
   )
 end
+
+puts "#{Comment.count}"
+Comment.find_or_create_by(
+  body: "What are you looking at?"
+)
+puts "#{Comment.count}"
 
 puts "Seed finished"
 puts"#{Post.count} posts created"
