@@ -1,0 +1,64 @@
+.FFFFFF...
+
+Failures:
+
+  1) SessionsController POST sessions returns http success
+     Failure/Error: user = User.find_by(email: params[:session][:email].downcase)
+
+     NoMethodError:
+       undefined method `[]' for nil:NilClass
+     # ./app/controllers/sessions_controller.rb:10:in `create'
+     # ./spec/controllers/sessions_controller_spec.rb:17:in `block (3 levels) in <top (required)>'
+
+  2) SessionsController POST sessions initializes a session
+     Failure/Error: user = User.find_by(email: params[:session][:email].downcase)
+
+     NoMethodError:
+       undefined method `[]' for nil:NilClass
+     # ./app/controllers/sessions_controller.rb:10:in `create'
+     # ./spec/controllers/sessions_controller_spec.rb:22:in `block (3 levels) in <top (required)>'
+
+  3) SessionsController POST sessions does not add a user id to session due to missing password
+     Failure/Error: user = User.find_by(email: params[:session][:email].downcase)
+
+     NoMethodError:
+       undefined method `[]' for nil:NilClass
+     # ./app/controllers/sessions_controller.rb:10:in `create'
+     # ./spec/controllers/sessions_controller_spec.rb:27:in `block (3 levels) in <top (required)>'
+
+  4) SessionsController POST sessions flashes #error with bad email address
+     Failure/Error: user = User.find_by(email: params[:session][:email].downcase)
+
+     NoMethodError:
+       undefined method `[]' for nil:NilClass
+     # ./app/controllers/sessions_controller.rb:10:in `create'
+     # ./spec/controllers/sessions_controller_spec.rb:32:in `block (3 levels) in <top (required)>'
+
+  5) SessionsController POST sessions renders #new with bad email address
+     Failure/Error: user = User.find_by(email: params[:session][:email].downcase)
+
+     NoMethodError:
+       undefined method `[]' for nil:NilClass
+     # ./app/controllers/sessions_controller.rb:10:in `create'
+     # ./spec/controllers/sessions_controller_spec.rb:37:in `block (3 levels) in <top (required)>'
+
+  6) SessionsController POST sessions redirects to the root view
+     Failure/Error: user = User.find_by(email: params[:session][:email].downcase)
+
+     NoMethodError:
+       undefined method `[]' for nil:NilClass
+     # ./app/controllers/sessions_controller.rb:10:in `create'
+     # ./spec/controllers/sessions_controller_spec.rb:42:in `block (3 levels) in <top (required)>'
+
+Finished in 0.10426 seconds (files took 1.58 seconds to load)
+10 examples, 6 failures
+
+Failed examples:
+
+rspec ./spec/controllers/sessions_controller_spec.rb:15 # SessionsController POST sessions returns http success
+rspec ./spec/controllers/sessions_controller_spec.rb:21 # SessionsController POST sessions initializes a session
+rspec ./spec/controllers/sessions_controller_spec.rb:26 # SessionsController POST sessions does not add a user id to session due to missing password
+rspec ./spec/controllers/sessions_controller_spec.rb:31 # SessionsController POST sessions flashes #error with bad email address
+rspec ./spec/controllers/sessions_controller_spec.rb:36 # SessionsController POST sessions renders #new with bad email address
+rspec ./spec/controllers/sessions_controller_spec.rb:41 # SessionsController POST sessions redirects to the root view
+
