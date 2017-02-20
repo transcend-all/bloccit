@@ -1,4 +1,5 @@
 require 'rails_helper'
+include SessionsHelper
 
 RSpec.describe Post, type: :model do
 
@@ -8,8 +9,15 @@ RSpec.describe Post, type: :model do
   let(:title){RandomData.random_sentence}
   let(:body){RandomData.random_paragraph}
   let(:topic){Topic.create!(name: name, description: description)}
-  let(:user) { User.create!(name: "Grunge", email: "plunge@bloccit.com", password: "clunkenstein")}
-  let(:post){topic.posts.create!(title: title, body: body, user: user)}
+  let(:my_user) { User.create!(name: "Grunge", email: "plunge@bloccit.com", password: "clunkenstein")}
+  let(:post){topic.posts.create!(title: title, body: body, user: my_user)}
+  # let(:my_user) { create(:my_user) }
+
+  # let(:topic) { create(:topic) }
+  # let(:user) { create(:user) }
+  # let(:post) { create(:post) }
+
+
 
   it { is_expected.to belong_to(:topic)}
   it {is_expected.to belong_to(:user)}
@@ -28,9 +36,15 @@ RSpec.describe Post, type: :model do
 
   describe "attributes" do
     it "has title, body, and user attributes" do
-      expect(post).to have_attributes(title: title, body: body, user: user)
+      expect(post).to have_attributes(title: title, body: body, user: my_user)
     end
   end
+
+  context "signed in user" do
+    before do
+      create_session(my_user)
+    end
+
 
   describe "voting" do
 
@@ -80,4 +94,5 @@ RSpec.describe Post, type: :model do
 
   end
 
+end
 end
