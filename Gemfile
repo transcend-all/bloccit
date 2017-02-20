@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap-sass'
 
+gem 'figaro', '1.0'
+
 
 group :development do
   gem 'sqlite3'
