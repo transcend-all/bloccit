@@ -5,8 +5,8 @@ include SessionsHelper
 RSpec.describe PostsController, type: :controller do
   let(:my_user) { create(:user) }
   let(:other_user) { create(:user) }
-  let(:topic) { create(:topic) }
-  let(:post) { create(:post) }
+  let(:my_topic) { create(:topic) }
+  let(:my_post) { create(:post) }
 
   context "guest" do
     describe "GET show" do

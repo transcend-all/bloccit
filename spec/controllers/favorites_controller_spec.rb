@@ -2,9 +2,9 @@ require 'rails_helper'
 include SessionsHelper
 
 RSpec.describe FavoritesController, type: :controller do
-  let(:topic) { create(:topic) }
-  let(:user) { create(:user) }
-  let(:post) { create(:post, topic: my_topic, user: my_user) }
+  let(:my_topic) { create(:topic) }
+  let(:my_user) { create(:user) }
+  let(:my_post) { create(:post, topic: my_topic, user: my_user) }
 
 context 'guest user' do
   describe 'POST create' do
