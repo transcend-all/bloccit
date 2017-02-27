@@ -27,4 +27,8 @@ class User < ApplicationRecord
     gravatar_id = Digest::MD5::hexdigest(self.email).downcase
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
   end
+
+  def blunt
+    "My name is " + self.name.to_s
+  end
 end
