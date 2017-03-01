@@ -19,7 +19,7 @@ It was a lot to take in, and I made some mistakes along the way, but I learned f
 
 # Getting Started
 
-1. Install Ruby and Rails (https://www.ruby-lang.org/en/)(http://rubyonrails.org/)
+1. Install Ruby and Rails ( https://www.ruby-lang.org/en/ ) ( http://rubyonrails.org/ )
 2. Clone the repository
 3. Navigate to the directory in the command line, and run the rails server (rails s)
 
